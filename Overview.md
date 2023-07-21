@@ -31,7 +31,7 @@ Here we look for the LDAP user returned from the LDAP server compared with what 
 
 We update the data for the users itself. Looking at the matches we found in phase 1 and 3. Updating the database with the associated values, and moving on. If a user was found in Phase 1 but NOT in phase 3 then they are deactivated.
 
-#### Phase 5 - Get SAML Users
+#### Phase 5 - Sync SAML Users
 Here we look for the data from Phase 2 and match them with the data that came back from phase 3. This is just a filter job that works to identify the SAML users based on their `auth_data` or email. If `auth_data` is blank, it uses email.
 
 We update the data for the users itself. Looking at the matches we found in phase 2 and 3. Updating the database with the associated values, and moving on. If a user was found in Phase  2 but NOT in phase 3 then they are deactivated. SAML being the exception here that they will get deactivated only if the `Sync with LDAP` flag is set. 
